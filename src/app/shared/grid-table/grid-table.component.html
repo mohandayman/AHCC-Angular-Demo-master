@@ -12,17 +12,17 @@
       </thead>
       <tbody>
         <tr *ngFor="let Country of this.CountryService.countries">
-          <th scope="row">{{ Country.ID }}</th>
-          <td>{{ Country.Code }}</td>
-          <td>{{ Country.Name }}</td>
-          <td>{{ Country.NameAr }}</td>
+          <th scope="row">{{ Country.id }}</th>
+          <td>{{ Country.code }}</td>
+          <td>{{ Country.name }}</td>
+          <td>{{ Country.nameAr }}</td>
           <td>
             <div class="text-center">
-            <a (click)="this.CountryService.Save(Country)" class="p-2">
+            <a (click)="this.CountryService.Update(Country)" class="p-2">
 
             <i  class="fa-solid fa-pen-to-square"></i>
             </a>
-            <a (click)="this.CountryService.Save(Country)" class="p-2">
+            <a (click)="this.CountryService.Delete()" class="p-2">
               <i  class="fa-solid fa-trash text-danger"></i>
             </a>
           </div>

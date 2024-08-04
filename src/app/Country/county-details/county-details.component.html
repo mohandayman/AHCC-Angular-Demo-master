@@ -1,15 +1,30 @@
-<form>
-<div class="row g-3 align-items-center">
-    <div class="col-auto">
-      <label for="inputPassword6" class="col-form-label">Password</label>
+
+<form  [formGroup]="CountryDetailsForm" (ngSubmit)="submitForm()">
+<div class="row">
+
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Name</label>
+        <input type="email" formControlName="Name" class="form-control" id="inputEmail4" placeholder="Name">
+        <span id="passwordHelpInline" *ngIf="this.Name.invalid && Name.touched" class="form-text">
+          Name Requiered && Less 100 Chars
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">NameAr</label>
+        <input type="text" formControlName="NameAr" class="form-control" id="inputPassword4" placeholder="NameAr">
+        <span id="passwordHelpInline" *ngIf="this.NameAr.invalid && NameAr.touched" class="form-text">
+          NameAr Requiered && Less 100 Chars
+        </span>
+      </div>
     </div>
-    <div class="col-auto">
-      <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-    </div>
-    <div class="col-auto">
-      <span id="passwordHelpInline" class="form-text">
-        Must be 8-20 characters long.
+    <div class="form-group">
+      <label for="inputAddress">Code</label>
+      <input type="text" formControlName="Code" class="form-control" id="inputAddress" placeholder="Code">
+      <span id="passwordHelpInline" *ngIf="this.Code.invalid && Code.touched" class="form-text">
+        Code Requiered && Less 100 Chars
       </span>
     </div>
-  </div>
-</form>
+   
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button (click)="Cancel()" class="btn btn-primary">Cancel</button>
+  </form>

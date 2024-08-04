@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountryService } from 'src/app/Services/country.service';
-import { County } from 'src/app/Types/county';
 
 
 @Component({
@@ -8,14 +7,14 @@ import { County } from 'src/app/Types/county';
   templateUrl: './grid-table.component.html',
   styleUrls: ['./grid-table.component.css']
 })
-export class GridTableComponent {
+export class GridTableComponent implements OnInit {
 
     
     
-   constructor(public CountryService:CountryService){
-
-    console.log(CountryService)
-   }
+   constructor(public CountryService:CountryService){   }
+  ngOnInit(): void {
+    this.CountryService.getAllCountries();
+  }
     
    
 }
